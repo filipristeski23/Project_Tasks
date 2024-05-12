@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "title": "Redesign ",
+    "description": "Create wireframes and mockups for the redesign of the company's main website",
+    "dueDate": "2023-07-01",
+    "status": "pending"
+  },
+  {
+    "id": 2,
+    "title": " New feature",
+    "description": "Develop and integrate the new user authentication feature into the main application",
+    "dueDate": "2023-06-15",
+    "status": "in progress"
+  },
+  {
+    "id": 3,
+    "title": "Fix bug",
+    "description": "Investigate and fix the critical bug causing crashes in the mobile app",
+    "dueDate": "2023-06-10",
+    "status": "completed"
+  },
+  {
+    "id": 4,
+    "title": "Product demo",
+    "description": "Create demo scripts and test cases for the upcoming product demo",
+    "dueDate": "2023-06-20",
+    "status": "pending"
+  },
+  {
+    "id": 5,
+    "title": "Codebase",
+    "description": "Refactor the legacy codebase to improve performance and maintainability",
+    "dueDate": "2023-07-15",
+    "status": "in progress"
+  },
+  {
+    "id": 6,
+    "title": "Documentation",
+    "description": "Write comprehensive documentation for the new API endpoints",
+    "dueDate": "2023-06-30",
+    "status": "pending"
+  },
+  {
+    "id": 7,
+    "title": "CI/CD pipeline",
+    "description": "Configure and set up the continuous integration and deployment pipeline",
+    "dueDate": "2023-07-10",
+    "status": "pending"
+  },
+  {
+    "id": 8,
+    "title": "Redesign ",
+    "description": "Create wireframes and mockups for the redesign of the company's main website",
+    "dueDate": "2023-07-01",
+    "status": "pending"
+  },
+  {
+    "id": 9,
+    "title": " New feature",
+    "description": "Develop and integrate the new user authentication feature into the main application",
+    "dueDate": "2023-06-15",
+    "status": "in progress"
+  },
+  {
+    "id": 10,
+    "title": "Fix bug",
+    "description": "Investigate and fix the critical bug causing crashes in the mobile app",
+    "dueDate": "2023-06-10",
+    "status": "completed"
+  },
+  {
+    "id": 11,
+    "title": "Product demo",
+    "description": "Create demo scripts and test cases for the upcoming product demo",
+    "dueDate": "2023-06-20",
+    "status": "pending"
+  },
+  {
+    "id": 12,
+    "title": "Codebase",
+    "description": "Refactor the legacy codebase to improve performance and maintainability",
+    "dueDate": "2023-07-15",
+    "status": "in progress"
+  },
+  {
+    "id": 13,
+    "title": "Documentation",
+    "description": "Write comprehensive documentation for the new API endpoints",
+    "dueDate": "2023-06-30",
+    "status": "pending"
+  },
+  {
+    "id": 14,
+    "title": "CI/CD pipeline",
+    "description": "Configure and set up the continuous integration and deployment pipeline",
+    "dueDate": "2023-07-10",
+    "status": "pending"
+  }
+]
