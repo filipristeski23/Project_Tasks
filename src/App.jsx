@@ -1,11 +1,13 @@
 import GlobalStyles from "./styles/GlobalStyles";
-import SideMenuContainer from "./containers/SideMenuContainer";
+import MainSectionContainer from "./containers/MainSectionContainer";
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <SideMenuContainer />
+      <div>
+        <MainSectionContainer />
+      </div>
     </>
   );
 }
