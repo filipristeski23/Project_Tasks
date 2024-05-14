@@ -1,40 +1,96 @@
 import styled from "styled-components";
 
-const Div = styled.div``;
+const Div = styled.div`
+  width: 100vw;
+  padding-left: 3.031rem;
+`;
 
 const Input = styled.input`
-  padding: 10px 0 10px 5px;
   border-radius: 0.375rem;
+  padding: 0.313rem 0.313rem 0.313rem 0.626rem;
+  border: 0.5px solid #0d062d;
+  height: 2.5rem;
+
+  &::placeholder {
+    color: #787486;
+  }
 `;
 
 const Div2 = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
+  width: 100%;
+  padding-top: 15px;
 `;
 const Div3 = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 const Textarea = styled.textarea`
-  padding: 10px 0 10px 5px;
+  padding: 0.626rem 0.313rem 0.313rem 0.626rem;
   border-radius: 0.375rem;
+  border: 0.5px solid #0d062d;
+  height: 6.25rem;
+
+  &::placeholder {
+    color: #787486;
+  }
 `;
 
 const Label = styled.label`
-  padding: 10px 0 10px 5px;
+  padding: 15px 0 15px 0px;
+  font-size: 1.125rem;
+  color: #0d062d;
+  font-weight: 600;
+`;
+
+const H2 = styled.h2`
+  margin: 0;
+  font-size: 2.875rem;
+  font-weight: 600;
+  color: #0d062d;
+  padding-bottom: 1.625rem;
+`;
+
+const Form = styled.form`
+  width: 75%;
+`;
+
+const Button = styled.button`
+  background-color: black;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  margin-top: 1.875rem;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.688rem;
+  border: 1px solid black;
+  cursor: pointer;
 `;
 
 function ContactForm() {
   return (
     <Div>
-      <h2>Contact Us</h2>
-      <form>
+      <H2>Contact Us</H2>
+      <Form>
         <Div2>
           <Div3>
-            <Label>Name</Label>
+            <Label>First Name</Label>
             <Input type="text" name="name" placeholder="Filip " />
+          </Div3>
+          <Div3>
+            <Label>Last Name</Label>
+            <Input type="text" name="last name" placeholder="Risteski" />
+          </Div3>
+        </Div2>
+        <Div2>
+          <Div3>
+            <Label>Phone Number</Label>
+            <Input type="number" name="phone" placeholder="+389 077 777 777" />
           </Div3>
           <Div3>
             <Label>Email</Label>
@@ -47,16 +103,6 @@ function ContactForm() {
         </Div2>
         <Div2>
           <Div3>
-            <Label>Phone Number</Label>
-            <Input type="number" name="phone" placeholder="+389 077 777 777" />
-          </Div3>
-          <Div3>
-            <Label>Your Company</Label>
-            <Input type="text" name="company" placeholder="filip enterprises" />
-          </Div3>
-        </Div2>
-        <Div2>
-          <Div3>
             <Label>Your Message</Label>
             <Textarea
               name="paragraph"
@@ -64,8 +110,8 @@ function ContactForm() {
             />
           </Div3>
         </Div2>
-        <button type="submit">Submit</button>
-      </form>
+        <Button type="submit">Submit</Button>
+      </Form>
     </Div>
   );
 }

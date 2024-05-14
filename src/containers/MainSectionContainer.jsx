@@ -5,7 +5,7 @@ const Div = styled.div`
   display: flex;
   align-items: center;
   height: 100vh;
-  padding-left: 3.031rem;
+  width: 100vw;
 `;
 
 function MainSectionContainer() {
