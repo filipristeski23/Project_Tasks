@@ -1,5 +1,5 @@
-import ContactForm from "../components/ContactForm";
 import styled from "styled-components";
+import MainContentSection from "../components/MainContentSection";
 
 const Div = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ const Div = styled.div`
 function MainSectionContainer() {
   return (
     <Div>
-      <ContactForm />
+      <MainContentSection />
     </Div>
   );
 }
