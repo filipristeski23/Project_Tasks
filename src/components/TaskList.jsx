@@ -21,6 +21,7 @@ const Div2 = styled.div`
   align-items: center;
   max-width: 12.688rem;
   padding-left: 1.375rem;
+  padding-right: 0.75rem;
 `;
 
 const Div3 = styled.div`
@@ -30,6 +31,7 @@ const Div3 = styled.div`
   overflow: auto;
   max-width: 14.063rem;
   padding-left: 0.75rem;
+  padding-right: 0.75rem;
   margin-top: 1.25rem;
   max-height: calc(100vh - 30.25rem);
 

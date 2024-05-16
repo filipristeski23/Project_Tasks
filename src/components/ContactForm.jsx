@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Div = styled.div`
-  width: 100vw;
+  width: 100%;
   padding-left: 3.031rem;
 `;
 

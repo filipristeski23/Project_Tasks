@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import MiniTask from "./MiniTask";
 
 const Div = styled.div`
   width: 100%;
@@ -17,12 +18,16 @@ const Div2 = styled.div`
   justify-content: space-between;
   margin-top: 2.625rem;
   overflow-y: auto;
+  gap: 20px;
 `;
 
 const Div3 = styled.div`
   background-color: #f5f5f5;
   padding: 1.25rem 1.25rem 0rem 1.25rem;
   border-radius: 1rem 1rem 0rem 0rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Div4 = styled.div`
@@ -60,6 +65,16 @@ const DivLine = styled.div`
   background-color: ${({ backgroundColor }) => backgroundColor};
 `;
 
+const DivTask = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+`;
+
 function MainContentSection() {
   return (
     <Div>
@@ -73,21 +88,51 @@ function MainContentSection() {
             </a>
           </Div4>
           <DivLine></DivLine>
-          <div>Here we will have the tasks from the project</div>
+          <DivTask>
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+          </DivTask>
         </Div3>
         <Div3>
           <Div4>
             <H3>In progress..</H3>
           </Div4>
           <DivLine backgroundColor="#FFA500"></DivLine>
-          <div>Here we will have the tasks from the project</div>
+          <DivTask>
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+          </DivTask>
         </Div3>
         <Div3>
           <Div4>
             <H3>Finished</H3>
           </Div4>
           <DivLine backgroundColor="#8BC48A"></DivLine>
-          <div>Here we will have the tasks from the project</div>
+          <DivTask>
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+            <MiniTask />
+          </DivTask>
         </Div3>
       </Div2>
     </Div>

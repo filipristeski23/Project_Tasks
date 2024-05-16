@@ -47,17 +47,16 @@ const Div4 = styled.div`
   flex-direction: column;
   margin: 0 auto;
   padding-bottom: 1.875rem;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
 `;
 
 function Contact() {
   return (
     <Div4>
       <Div>
-        <H3>Thoughts Time</H3>
-        <H4>
-          We dont have any notice for you, till then you can share your thoughts
-          with your peers.
-        </H4>
+        <H3>Need Support?</H3>
+        <H4>Just drop us a message, we will answer as soon as possible.</H4>
         <A href="www.google.com">Write a message</A>
       </Div>
     </Div4>

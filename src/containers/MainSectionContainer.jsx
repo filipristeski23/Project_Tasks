@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import MainContentSection from "../components/MainContentSection";
+import ContactForm from "../components/ContactForm";
 
 const Div = styled.div`
   display: flex;
