@@ -2,22 +2,40 @@ import GlobalStyles from "./styles/GlobalStyles";
 import MainSectionContainer from "./containers/MainSectionContainer";
 import styled from "styled-components";
 import SideMenuContainer from "./containers/SideMenuContainer";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ContactForm from "./components/ContactForm";
+import MainContentSection from "./components/MainContentSection";
 
 const Div = styled.div`
   display: flex;
 `;
 
-function App() {
-  return (
-    <>
-      <GlobalStyles />
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
       <Div>
+        <GlobalStyles />
         <SideMenuContainer />
         <MainSectionContainer />
       </Div>
-    </>
-  );
+    ),
+    children: [
+      {
+        index: true,
+        element: <MainContentSection />,
+      },
+
+      {
+        path: "contact",
+        element: <ContactForm />,
+      },
+    ],
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
 }
 
 export default App;

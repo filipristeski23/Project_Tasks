@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Div = styled.div`
   display: flex;
@@ -57,7 +58,10 @@ function Contact() {
       <Div>
         <H3>Need Support?</H3>
         <H4>Just drop us a message, we will answer as soon as possible.</H4>
-        <A href="www.google.com">Write a message</A>
+
+        <Link to="contact">
+          <A href="www.google.com">Write a message</A>
+        </Link>
       </Div>
     </Div4>
   );
