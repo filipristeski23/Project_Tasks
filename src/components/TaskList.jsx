@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import TaskData from "../TaskData.json";
 import EachTask from "./EachTask";
+import { Link } from "react-router-dom";
 
 const Div = styled.div`
   display: flex;
@@ -50,9 +51,11 @@ function TaskList() {
     <Div>
       <Div2>
         <H4>MY PROJECTS</H4>
-        <a href="www.google.com">
-          <Img src="./public/add-square.svg" alt="Add square"></Img>
-        </a>
+        <Link to="createtask">
+          <a href="www.google.com">
+            <Img src="./public/add-square.svg" alt="Add square"></Img>
+          </a>
+        </Link>
       </Div2>
       <Div3>
         {TaskData.map((eachtask) => (

@@ -5,6 +5,7 @@ import SideMenuContainer from "./containers/SideMenuContainer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ContactForm from "./components/ContactForm";
 import MainContentSection from "./components/MainContentSection";
+import NewTask from "./components/NewTask";
 
 const Div = styled.div`
   display: flex;
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <ContactForm />,
+      },
+
+      {
+        path: "createtask",
+        element: <NewTask />,
       },
     ],
   },
