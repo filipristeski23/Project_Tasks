@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const Div = styled.div`
@@ -89,10 +90,23 @@ const DivLine = styled.div`
 `;
 
 function NewTask() {
+  const [newProject, setNewProject] = useState("");
+  const [newTitle, setNewTitle] = useState("");
+  const [newDesc, setNewDesc] = useState("");
+
+  const setFormValue = (e) => {
+    setNewProject(e.target.value);
+    setNewTitle(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Div>
       <H2>Create Your New Project</H2>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Div2>
           <Div3>
             <Label>Project Name</Label>
@@ -100,6 +114,8 @@ function NewTask() {
               type="text"
               name="name"
               placeholder="Graham technologies website "
+              value={newProject}
+              onChange={setFormValue}
             />
           </Div3>
         </Div2>
@@ -111,6 +127,8 @@ function NewTask() {
               type="text"
               name="name"
               placeholder="Submit form button needs finishing"
+              value={newTitle}
+              onChange={setFormValue}
             />
           </Div3>
           <Div3>
@@ -118,6 +136,8 @@ function NewTask() {
             <Textarea
               name="paragraph"
               placeholder="Graham technologies website, submit button color change "
+              value={newDesc}
+              onChange={setNewDesc}
             />
           </Div3>
         </Div2>
