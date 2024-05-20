@@ -73,30 +73,20 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const H3 = styled.h3`
-  margin: 0;
-  padding: 0;
-  color: green;
-  font-weight: 500;
-  font-size: 1rem;
-`;
-
-const DivLine = styled.div`
-  background-color: #5030e5;
-  width: 100%;
-  height: 1px;
-  background-color: black;
-  margin-top: 20px;
-`;
-
 function NewTask() {
-  const [newProject, setNewProject] = useState("");
-  const [newTitle, setNewTitle] = useState("");
-  const [newDesc, setNewDesc] = useState("");
+  const [data, setData] = useState({
+    projectName: "",
+    taskName: "",
+    description: "",
+  });
 
   const setFormValue = (e) => {
-    setNewProject(e.target.value);
-    setNewTitle(e.target.value);
+    const { name, value } = e.target;
+
+    setData({
+      ...data,
+      [name]: value,
+    });
   };
 
   const handleSubmit = (e) => {
@@ -112,32 +102,31 @@ function NewTask() {
             <Label>Project Name</Label>
             <Input
               type="text"
-              name="name"
+              name="projectName"
               placeholder="Graham technologies website "
-              value={newProject}
+              value={data.projectName}
               onChange={setFormValue}
             />
           </Div3>
         </Div2>
         <Div2>
-          <DivLine></DivLine>
           <Div3>
-            <Label>Task Title</Label>
+            <Label>First Task Title</Label>
             <Input
               type="text"
-              name="name"
+              name="taskName"
               placeholder="Submit form button needs finishing"
-              value={newTitle}
+              value={data.taskName}
               onChange={setFormValue}
             />
           </Div3>
           <Div3>
             <Label>Explain the task</Label>
             <Textarea
-              name="paragraph"
+              name="description"
               placeholder="Graham technologies website, submit button color change "
-              value={newDesc}
-              onChange={setNewDesc}
+              value={data.description}
+              onChange={setFormValue}
             />
           </Div3>
         </Div2>

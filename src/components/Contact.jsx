@@ -30,7 +30,18 @@ const H4 = styled.h4`
   padding: 0rem 1.25rem;
 `;
 
-const A = styled.a`
+const Div4 = styled.div`
+  max-width: 12.844rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-bottom: 1.875rem;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
   background-color: white;
   border-radius: 0.25rem;
   text-decoration: none;
@@ -42,26 +53,13 @@ const A = styled.a`
   border: 1px solid black;
 `;
 
-const Div4 = styled.div`
-  max-width: 12.844rem;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding-bottom: 1.875rem;
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
-`;
-
 function Contact() {
   return (
     <Div4>
       <Div>
         <H3>Need Support?</H3>
         <H4>Just drop us a message, we will answer as soon as possible.</H4>
-
-        <Link to="contact">
-          <A href="www.google.com">Write a message</A>
-        </Link>
+        <StyledLink to="contact">Write a message</StyledLink>
       </Div>
     </Div4>
   );

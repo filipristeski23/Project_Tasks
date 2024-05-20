@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 const Div = styled.div`
   width: 100%;
@@ -73,24 +74,63 @@ const Button = styled.button`
 `;
 
 function ContactForm() {
+  const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    description: "",
+  });
+
+  const setValue = (e) => {
+    const { name, value } = e.target;
+
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Div>
       <H2>Contact Us</H2>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Div2>
           <Div3>
             <Label>First Name</Label>
-            <Input type="text" name="name" placeholder="Filip " />
+            <Input
+              type="text"
+              name="name"
+              placeholder="Filip"
+              value={data.firstName}
+              onChange={setValue}
+            />
           </Div3>
           <Div3>
             <Label>Last Name</Label>
-            <Input type="text" name="last name" placeholder="Risteski" />
+            <Input
+              type="text"
+              name="last name"
+              placeholder="Risteski"
+              value={data.lastName}
+              onChange={setValue}
+            />
           </Div3>
         </Div2>
         <Div2>
           <Div3>
             <Label>Phone Number</Label>
-            <Input type="number" name="phone" placeholder="+389 077 777 777" />
+            <Input
+              type="number"
+              name="phone"
+              placeholder="+389 077 777 777"
+              value={data.phone}
+              onChange={setValue}
+            />
           </Div3>
           <Div3>
             <Label>Email</Label>
@@ -98,6 +138,8 @@ function ContactForm() {
               type="text"
               name="email"
               placeholder="filipristeski30@gmail.com"
+              value={data.email}
+              onChange={setValue}
             />
           </Div3>
         </Div2>
@@ -107,6 +149,8 @@ function ContactForm() {
             <Textarea
               name="paragraph"
               placeholder="Write your message here .."
+              value={data.description}
+              onChange={setValue}
             />
           </Div3>
         </Div2>

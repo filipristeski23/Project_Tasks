@@ -62,7 +62,7 @@ const DivLine = styled.div`
   height: 2px;
   margin-top: 1.25rem;
   margin-bottom: 2.5rem;
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  background-color: ${({ backgroundcolor }) => backgroundcolor};
 `;
 
 const DivTask = styled.div`
@@ -104,7 +104,7 @@ function MainContentSection() {
           <Div4>
             <H3>In progress..</H3>
           </Div4>
-          <DivLine backgroundColor="#FFA500"></DivLine>
+          <DivLine backgroundcolor="#FFA500"></DivLine>
           <DivTask>
             <MiniTask />
             <MiniTask />
@@ -121,7 +121,7 @@ function MainContentSection() {
           <Div4>
             <H3>Finished</H3>
           </Div4>
-          <DivLine backgroundColor="#8BC48A"></DivLine>
+          <DivLine backgroundcolor="#8BC48A"></DivLine>
           <DivTask>
             <MiniTask />
             <MiniTask />

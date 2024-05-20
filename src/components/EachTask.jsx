@@ -4,10 +4,14 @@ const Div = styled.div`
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  border: 0.5px solid black;
   border-radius: 0.375rem;
   max-width: 14.063rem;
   padding: 0.625rem 0.625rem 0.625rem 0rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #eaeaea;
+  }
 `;
 
 const H4 = styled.h4`
@@ -19,6 +23,7 @@ const H4 = styled.h4`
 
 const Img = styled.img`
   padding-left: 0.75rem;
+  width: 8px;
 `;
 
 function EachTask({ eachtask }) {

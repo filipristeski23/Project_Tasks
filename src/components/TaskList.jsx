@@ -52,9 +52,7 @@ function TaskList() {
       <Div2>
         <H4>MY PROJECTS</H4>
         <Link to="createtask">
-          <a href="www.google.com">
-            <Img src="./public/add-square.svg" alt="Add square"></Img>
-          </a>
+          <Img src="./public/add-square.svg" alt="Add square"></Img>
         </Link>
       </Div2>
       <Div3>
