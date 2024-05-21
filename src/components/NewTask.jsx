@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styled from "styled-components";
-import TaskData from "../TaskData.json";
 
 const Div = styled.div`
   width: 100%;
@@ -89,7 +88,7 @@ function NewTask() {
     ],
   });
 
-  const [arrayData, setArrayData] = useState(TaskData);
+  const [arrayData, setArrayData] = useState([]);
 
   const setFormValue = (e) => {
     const { name, value } = e.target;
@@ -122,7 +121,8 @@ function NewTask() {
       ],
     };
 
-    const updatedData = [...arrayData, newProject];
+    const updatedData =
+      arrayData.length === 0 ? [newProject] : [...arrayData, newProject];
 
     setArrayData(updatedData);
 
