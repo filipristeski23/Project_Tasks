@@ -57,7 +57,7 @@ function TaskList() {
       </Div2>
       <Div3>
         {TaskData.map((eachtask) => (
-          <EachTask eachtask={eachtask} key={eachtask.id} />
+          <EachTask eachtask={eachtask} key={eachtask.projectId} />
         ))}
       </Div3>
     </Div>

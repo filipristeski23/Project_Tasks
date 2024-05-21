@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import TaskData from "../TaskData.json";
 
 const Div = styled.div`
   width: 100%;
@@ -74,23 +75,67 @@ const Button = styled.button`
 `;
 
 function NewTask() {
+  function generateUniqueId() {
+    return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+  }
+
   const [data, setData] = useState({
     projectName: "",
-    taskName: "",
-    description: "",
+    tasks: [
+      {
+        taskName: "",
+        description: "",
+      },
+    ],
   });
+
+  const [arrayData, setArrayData] = useState(TaskData);
 
   const setFormValue = (e) => {
     const { name, value } = e.target;
-
-    setData({
-      ...data,
-      [name]: value,
-    });
+    setData((prevData) => ({
+      ...prevData,
+      projectName: name === "projectName" ? value : prevData.projectName,
+      tasks: [
+        {
+          taskName: name === "taskName" ? value : prevData.tasks[0].taskName,
+          description:
+            name === "description" ? value : prevData.tasks[0].description,
+        },
+      ],
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const newProjectId = generateUniqueId();
+
+    const newProject = {
+      projectId: newProjectId,
+      projectName: data.projectName,
+      tasks: [
+        {
+          title: data.tasks[0].taskName,
+          description: data.tasks[0].description,
+        },
+      ],
+    };
+
+    const updatedData = [...arrayData, newProject];
+
+    setArrayData(updatedData);
+
+    setData({
+      projectName: "",
+      tasks: [
+        {
+          taskName: "",
+          description: "",
+        },
+      ],
+    });
+    console.log(arrayData);
   };
 
   return (

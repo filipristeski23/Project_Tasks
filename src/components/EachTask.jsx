@@ -30,7 +30,7 @@ function EachTask({ eachtask }) {
   return (
     <Div>
       <Img src="./elipse.svg" alt="ellipse"></Img>
-      <H4>{eachtask.title}</H4>
+      <H4>{eachtask.projectName}</H4>
     </Div>
   );
 }
