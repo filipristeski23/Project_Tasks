@@ -46,7 +46,7 @@ const Img = styled.img`
   width: 1.563rem;
 `;
 
-function TaskList() {
+function TaskList({ projects, onProjectClick }) {
   return (
     <Div>
       <Div2>
@@ -56,8 +56,13 @@ function TaskList() {
         </Link>
       </Div2>
       <Div3>
-        {TaskData.map((eachtask) => (
-          <EachTask eachtask={eachtask} key={eachtask.projectId} />
+        {projects.map((eachtask) => (
+          <EachTask
+            eachtask={eachtask}
+            key={eachtask.projectId}
+            onClick={() => onProjectClick(eachtask.projectId)}
+            projects={projects}
+          />
         ))}
       </Div3>
     </Div>

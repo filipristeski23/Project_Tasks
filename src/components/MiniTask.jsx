@@ -41,7 +41,6 @@ const H5 = styled.h4`
 function MiniTask() {
   return (
     <Div>
-      <H4>Low</H4>
       <H3>Mini Task Name</H3>
       <H5>
         The mini description goes here The mini description goes here The mini

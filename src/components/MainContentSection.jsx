@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import MiniTask from "./MiniTask";
+import { useOutletContext } from "react-router-dom";
 
 const Div = styled.div`
   width: 100%;
@@ -62,7 +63,7 @@ const DivLine = styled.div`
   height: 2px;
   margin-top: 1.25rem;
   margin-bottom: 2.5rem;
-  background-color: ${({ backgroundcolor }) => backgroundcolor};
+  background-color: ${({ backgroundColor }) => backgroundColor};
 `;
 
 const DivTask = styled.div`
@@ -76,67 +77,34 @@ const DivTask = styled.div`
 `;
 
 function MainContentSection() {
-  return (
-    <Div>
-      <H2>Project Name</H2>
-      <Div2>
-        <Div3>
-          <Div4>
-            <H3>To do</H3>
-            <a href="www.google.com">
-              <Img src="./add-square.svg" alt="add to do"></Img>
-            </a>
-          </Div4>
-          <DivLine></DivLine>
-          <DivTask>
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-          </DivTask>
-        </Div3>
-        <Div3>
-          <Div4>
-            <H3>In progress..</H3>
-          </Div4>
-          <DivLine backgroundcolor="#FFA500"></DivLine>
-          <DivTask>
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-          </DivTask>
-        </Div3>
-        <Div3>
-          <Div4>
-            <H3>Finished</H3>
-          </Div4>
-          <DivLine backgroundcolor="#8BC48A"></DivLine>
-          <DivTask>
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-            <MiniTask />
-          </DivTask>
-        </Div3>
-      </Div2>
-    </Div>
+  const outletContext = useOutletContext();
+  const selectedProject = outletContext?.selectedProject;
+  return !selectedProject ? (
+    <>
+      <Div>
+        <H2>selectedProject.name</H2>
+        <Div2>
+          {selectedProject.tasks.map((task, index) => (
+            <Div3 key={index}>
+              <Div4>
+                <H3>{task.title}</H3>
+                <a href="www.google.com">
+                  <Img src="./add-square.svg" alt="add to do" />
+                </a>
+              </Div4>
+              <DivLine></DivLine>
+              <DivTask>
+                {task.subtasks.map((subtask, subIndex) => (
+                  <MiniTask key={subIndex} />
+                ))}
+              </DivTask>
+            </Div3>
+          ))}
+        </Div2>
+      </Div>
+    </>
+  ) : (
+    <div>Enter your first project</div>
   );
 }
-
 export default MainContentSection;

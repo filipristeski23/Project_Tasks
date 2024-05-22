@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import MainContentSection from "../components/MainContentSection";
 import ContactForm from "../components/ContactForm";
-import { Outlet } from "react-router-dom";
+import { Outlet, useOutletContext } from "react-router-dom";
+import { useMemo } from "react";
 
 const Div = styled.div`
   display: flex;
@@ -10,10 +11,21 @@ const Div = styled.div`
   width: 100vw;
 `;
 
-function MainSectionContainer() {
+function MainSectionContainer({ selectedProject }) {
+  const hasProject = useMemo(
+    () =>
+      selectedProject !== null &&
+      selectedProject !== undefined &&
+      JSON.stringify(selectedProject) !== "{}",
+    [selectedProject]
+  );
   return (
     <Div>
-      <Outlet />
+      {hasProject ? (
+        <MainContentSection />
+      ) : (
+        <Outlet context={{ selectedProject }} />
+      )}
     </Div>
   );
 }

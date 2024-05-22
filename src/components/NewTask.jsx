@@ -73,7 +73,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-function NewTask() {
+function NewTask({ onAddProject }) {
   function generateUniqueId() {
     return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
   }
@@ -87,8 +87,6 @@ function NewTask() {
       },
     ],
   });
-
-  const [arrayData, setArrayData] = useState([]);
 
   const setFormValue = (e) => {
     const { name, value } = e.target;
@@ -121,10 +119,7 @@ function NewTask() {
       ],
     };
 
-    const updatedData =
-      arrayData.length === 0 ? [newProject] : [...arrayData, newProject];
-
-    setArrayData(updatedData);
+    onAddProject(newProject);
 
     setData({
       projectName: "",
@@ -135,7 +130,6 @@ function NewTask() {
         },
       ],
     });
-    console.log(arrayData);
   };
 
   return (
@@ -161,7 +155,7 @@ function NewTask() {
               type="text"
               name="taskName"
               placeholder="Submit form button needs finishing"
-              value={data.taskName}
+              value={data.tasks[0].taskName}
               onChange={setFormValue}
             />
           </Div3>
@@ -170,7 +164,7 @@ function NewTask() {
             <Textarea
               name="description"
               placeholder="Graham technologies website, submit button color change "
-              value={data.description}
+              value={data.tasks[0].description}
               onChange={setFormValue}
             />
           </Div3>

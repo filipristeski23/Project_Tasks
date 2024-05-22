@@ -26,9 +26,9 @@ const Img = styled.img`
   width: 8px;
 `;
 
-function EachTask({ eachtask }) {
+function EachTask({ eachtask, onClick }) {
   return (
-    <Div>
+    <Div onClick={() => onClick(eachtask.projectId)}>
       <Img src="./elipse.svg" alt="ellipse"></Img>
       <H4>{eachtask.projectName}</H4>
     </Div>

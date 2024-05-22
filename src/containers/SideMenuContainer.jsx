@@ -18,12 +18,12 @@ const DivParent = styled.div`
   flex-direction: column;
 `;
 
-function SideMenuContainer() {
+function SideMenuContainer({ projects, onProjectClick }) {
   return (
     <DivParent>
       <Logo />
       <Div>
-        <TaskList />
+        <TaskList projects={projects} onProjectClick={onProjectClick} />
         <Contact />
       </Div>
     </DivParent>
